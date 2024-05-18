@@ -1,9 +1,18 @@
-const daysOfWeek = [mon, tue, wed, thu, fri, sat];
-// array = 배열, 안에 어떤 타입의 값이든 들어갈 수 있음, 대괄호로 표시
-// 배열을 셀때는 0부터
-console.log(daysOfWeek);
-console.log(daysOfWeek[5]);
-// 배열의 어떤 위치(index)의 값을 불러올 때는 그 위치를 대괄호 안에
-// 배열에 요소 추가하기
-daysOfWeek.push("sun");
-console.log(daysOfWeek);
+const player = {
+    name: "shmelleon",
+    points: 10,
+    grade: 1
+};
+
+console.log(player);
+console.log(player.name);
+console.log(player["name"]); // player.name == player["name"]
+
+player.points = 100;
+console.log(player);
+// const 자체는 변경 불가 but, const가 objects여서 그 내부의 속성(property)을 변경할 때는 상관없음
+
+player.lastName = "black-bean";
+console.log(player);
+// property을 추가하는 것도 가능
+
