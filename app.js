@@ -1,18 +1,30 @@
-const player = {
+// 반복되는 코드가 있으면 함수쓰자(바뀌는 부분만 변수로 설정해서)
+function sayHello(nameOfPerson, age) = {
+    console.log("Hello! My name is " + nameOfPerson + ".I'm " + age);
+}
+
+sayHello("shmelleon, 28");
+
+//함수에 매개변수를 입력하면 매개변수에 따라 함수를 실행
+
+function plus(a, b){
+    console.log(a,b);
+}
+function divide(a, b){
+    console.log(a/b);
+}
+
+plus(8 ,60);
+divide(98, 20);
+//함수에 매개변수가 필수적인건 아니다
+//함수 외부에서 매개변수를 사용해도 의미가 없다 -> 오류 발생
+
+const player={
     name: "shmelleon",
-    points: 10,
-    grade: 1
+    sayHello: function(otherPersonsName){
+        console.log("hello!" + otherPersonsName);
+    }
 };
 
-console.log(player);
 console.log(player.name);
-console.log(player["name"]); // player.name == player["name"]
-
-player.points = 100;
-console.log(player);
-// const 자체는 변경 불가 but, const가 objects여서 그 내부의 속성(property)을 변경할 때는 상관없음
-
-player.lastName = "black-bean";
-console.log(player);
-// property을 추가하는 것도 가능
-
+player.sayHello("polynova");
