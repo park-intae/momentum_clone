@@ -1,16 +1,8 @@
-const calculator = {
-    add: function(a,b){
-        console.log(a+b);
-    },
-    subt: function(a,b){
-        console.log(a-b);
-    },
-    mul: function(a,b){
-        console.log(a*b);
-    },
-    divi: function(a,b){
-        console.log(a/b);
-    }
+const age = 95;
+function calculKrAge(ageOfFore){
+    ageOfFore + 2;
 }
+ 
+const krAge = calculKrAge(age);
 
-calculator.add(5, 1);
+console.log(krAge);
