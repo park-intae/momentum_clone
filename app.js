@@ -1,15 +1,14 @@
-const h1 = document.querySelector("div.hello:first-child h1");
+// const loginForm = document.getElementById("login-form");
+// const loninInput = loginForm.querySelector("input");
+// const loginButton = loginForm.querySelector("button");
+// =
 
-function handleTitleClick(){
-    const clickedClass = "clicked"
-    // if (h1.classList.contains(clickedClass)){ // classList에"clikedClass"클래스가 포함되어 있는지 확인
-    //     h1.classList.remove(clickedClass); // classList에서 "clikedclass"클래스 제거
-    // }else{
-    //     h1.classList.add(clickedClass);
-    // }
-    //아래 코드 한줄로 대체 가능
+const loninInput = document.querySelector("#login-form input");
+const loginButton = document.querySelector("#login-form button");
 
-    h1.classList.toggle(clickedClass);
+function onLoginBtnClick(){
+    console.dir(loninInput);
+    console.log("click");
 }
 
-h1.addEventListener("click",handleTitleClick);
+loginButton.addEventListener("click", onLoginBtnClick);
