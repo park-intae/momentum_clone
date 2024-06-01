@@ -8,6 +8,7 @@ function onLoginSubmit(event){
     event.preventDefault();
     loginForm.classList.add(HIDDEN_CLASSNA);
     const username = loninInput.value;
+    localStorage.setItem("username", username);
     greeting.classList.remove(HIDDEN_CLASSNA);
     greeting.innerText = `Hello ${username}`;
 }
