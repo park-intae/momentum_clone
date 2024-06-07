@@ -17,8 +17,9 @@ function deleteTodo(event){
 
 function paintTodo(newTodo){
     const li = document.createElement("li");
+    li.id = newTodo.id;
     const span = document.createElement("span");
-    span.innerText = newTodo;
+    span.innerText = newTodo.text;
     const button = document.createElement("button");
     button.innerText = "❌";
     button.addEventListener("click", deleteTodo)
@@ -31,16 +32,21 @@ function handleTodoSubmit(event){
     event.preventDefault();
     const newTodo = todoInput.value;
     todoList.value = "";
-    todos.push(newTodo);
-    paintTodo(newTodo);
+    const newTodoOb = {
+        text: newTodo,
+        od: Date.now(),
+    };
+    todos.push(newTodoOb);
+    paintTodo(newTodoOb);
     saveTodo();
 }
 
 todoForm.addEventListener("submit", handleTodoSubmit);
 
 const savedTodos = localStorage.getItem(TODOS_KEY);
-console.log(savedTodos);
+
 if (savedTodos !== null) {
     const parsedToDos = JSON.parse(savedTodos);
-    parsedToDos.forEach((item) => console.log("this is the turn of ", item));
+    todos = parsedToDos;
+    parsedToDos.forEach(paintTodo);
   }
